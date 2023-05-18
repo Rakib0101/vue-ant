@@ -5,60 +5,79 @@ export default {
     name: 'MidNav',
     components: {
         ListIcon, DownIcon
+    },
+    data() {
+        return {
+            categories: [
+                {
+                    link: "/", item: "1st item"
+                },
+                {
+                    link: "/", item: "2nd item"
+                },
+                {
+                    link: "/", item: "3rd item"
+                },
+            ],
+            menus: [
+                {
+                    link: "/", item: "1st item"
+                },
+                {
+                    link: "/", item: "2nd item"
+                },
+            ]
+        }
     }
 }
 </script>
 
 <template>
-    <div class="flex justify-between pt-5 items-center">
-        <div class="flex gap-5">
-            <!-- Category Button -->
-            <div class="w-[148px]">
-                <a-dropdown>
-                    <a @click.prevent
-                        class="ant-dropdown-link flex items-center gap-[11px] border hover:border-primary hover:text-primary rounded-md justify-center categoryBtn transition duration-300">
-                        <ListIcon />
-                        Category
-                    </a>
-                    <template #overlay>
-                        <a-menu>
-                            <a-menu-item>
-                                <a href="javascript:;">1st menu item</a>
-                            </a-menu-item>
-                            <a-menu-item>
-                                <a href="javascript:;">2nd menu item</a>
-                            </a-menu-item>
-                            <a-menu-item>
-                                <a href="javascript:;">3rd menu item</a>
-                            </a-menu-item>
-                        </a-menu>
-                    </template>
-                </a-dropdown>
+    <div class="max-w-[1920px] bg-white drop-shadow py-6">
+        <div class="flex justify-between max-w-[1320px] mx-auto">
+            <div class="flex gap-5">
+                <!-- Category Button -->
+                <div class="w-[148px]">
+                    <a-dropdown>
+                        <a @click.prevent
+                            class="ant-dropdown-link flex items-center gap-[11px] border hover:border-primary hover:text-primary rounded-md justify-center categoryBtn transition duration-300">
+                            <ListIcon />
+                            Category
+                        </a>
+                        <template #overlay>
+                            <a-menu>
+                                <a-menu-item v-for="category in  categories " :key="category.item">
+                                    <a :href="category.item">{{ category.item }}</a>
+                                </a-menu-item>
+                            </a-menu>
+                        </template>
+                    </a-dropdown>
+                </div>
+                <!-- Category-Button End -->
+                <nav class="flex items-center gap-5">
+                    <a href="">Home</a>
+                    <a href="">Browse Listing</a>
+                    <a href="">Pricing Plan</a>
+                    <a-dropdown>
+                        <a href="" class="ant-dropdown-link flex items-center gap-[5px]">
+                            Testing Dropdown
+                            <DownIcon />
+                        </a>
+                        <template #overlay>
+                            <a-menu>
+                                <a-menu-item v-for="menu in menus" :key="menu.item">
+                                    <a :href="menu.link">{{ menu.item }}</a>
+                                </a-menu-item>
+                            </a-menu>
+                        </template>
+                    </a-dropdown>
+                    <a href="">Blog</a>
+                </nav>
             </div>
-            <!-- Category-Button End -->
-            <nav class="flex items-center gap-5">
-                <a href="">Home</a>
-                <a href="">Browse Listing</a>
-                <a href="">Pricing Plan</a>
-                <a-dropdown>
-                    <a href="" class="ant-dropdown-link flex items-center gap-[5px]">
-                        Testing Dropdown
-                        <DownIcon />
-                    </a>
-                    <template #overlay>
-                        <a-menu>
-                            <a-menu-item>
-                                <a href="/">1st menu item</a>
-                            </a-menu-item>
-                        </a-menu>
-                    </template>
-                </a-dropdown>
-                <a href="">Blog</a>
-            </nav>
+            <a-button class="llBtn !py-[11px] !px-[17px] !h-auto">
+                EN,USD
+            </a-button>
         </div>
-        <a-button class="llBtn !py-[11px] !px-[17px] !h-auto">
-            EN,USD
-        </a-button>
     </div>
 </template>
 
