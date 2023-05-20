@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import MidNav from '../components/MidNav.vue'
+import BreadCrumb from '../components/BreadCrumb.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -12,6 +13,10 @@ const router = createRouter({
       path: '/nav',
       name: 'navbar',
       component: MidNav
+    },{
+      path: '/bread',
+      name: 'breadcrumb',
+      component: BreadCrumb
     }
     
   ]

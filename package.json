@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite --port 3000",
+    "dev": "vite --port 5000",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
     "ant-design-vue": "^3.2.20",
     "vue": "^3.3.2",
     "vue-router": "^4.2.0"
