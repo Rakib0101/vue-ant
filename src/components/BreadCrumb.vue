@@ -7,16 +7,16 @@ export default {
 }
 </script>
 <template>
-    <div class="max-w-[1320px] mx-auto pt-[2px]">
+    <div class="max-w-[1320px] mx-auto pt-[2px] pb-[8px]">
         <div class="flex relative justify-center items-center bg-[#F1F5F0] h-[86px] w-full rounded-br-xl rounded-bl-xl">
             <h4 class="bread">browse listing</h4>
             <div class="absolute -bottom-5 bg-white">
                 <div class="h-[36px] breadcrumb flex justify-center border px-[16px] gap-3 py-2 rounded">
-                    <p>Home</p>
+                    <a href="/">Home</a>
                     <span class="mt-[5px]">
                         <GT />
                     </span>
-                    <p>Browse Listing</p>
+                    <a href="/">Browse Listing</a>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@ export default {
     text-transform: capitalize;
 }
 
-.breadcrumb p,
+.breadcrumb a,
 span {
     font-family: 'IBM Plex Sans';
     font-style: normal;
