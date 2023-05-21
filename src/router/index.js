@@ -1,15 +1,14 @@
-import { createRouter, createWebHistory } from "vue-router";
-import Navbar from "../components/Navbar.vue";
-
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
-      name: "Navbar",
-      component: Navbar,
-    },
-  ],
-});
+      path: '/',
+      name: 'home',
+      component: HomeView
+    },   
+  ]
+})
 
 export default router;
