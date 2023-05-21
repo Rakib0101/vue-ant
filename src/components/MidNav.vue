@@ -33,7 +33,7 @@ export default {
 </script>
 
 <template>
-    <div class="max-w-[1920px] bg-white drop-shadow py-6">
+    <div class="bg-white py-6">
         <div class="flex justify-between max-w-[1320px] mx-auto">
             <div class="flex gap-5">
                 <!-- Category Button -->
