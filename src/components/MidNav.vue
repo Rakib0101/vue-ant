@@ -116,6 +116,8 @@ nav a:hover {
     line-height: 24px;
     color: #636A60;
     border-radius: 6px;
+    box-shadow: 0px 3px 14px rgba(23, 30, 21, 0.02);
+    border: 1px solid #DEE6DC !important;
 }
 
 .ant-btn.llBtn:hover {
