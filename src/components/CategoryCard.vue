@@ -281,7 +281,7 @@
     </div>
   </div>
 </template>
-<script lang="ts">
+<script>
 import img1 from "../assets/category/img1.png";
 import img2 from "../assets/category/img2.png";
 import img3 from "../assets/category/img3.png";
