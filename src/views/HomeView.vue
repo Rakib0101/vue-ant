@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar.vue";
 import MidNav from "../components/MidNav.vue";
 import BreadCrumb from "../components/BreadCrumb.vue";
 import Filter from "./FilterComponent.vue";
-import Card from "../components/Card.vue"
 </script>
 
 <template>

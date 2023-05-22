@@ -1,6 +1,5 @@
 <script setup>
 import Card from '../components/Card.vue';
-import Tag from "../components/icons/card-icons/PriceTag.vue"
 import Filter from "../components/icons/filterIcon.vue"
 import { defineComponent } from "vue"
 import DownIcon from '../components/icons/DownIcon.vue';
