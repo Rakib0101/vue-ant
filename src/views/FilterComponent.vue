@@ -29,8 +29,20 @@ export default defineComponent({
             filters: [],
             value1: ref('Sort By :'),
             options1,
+            isView: true
         };
     },
+    methods: {
+        onView() {
+            this.whatView()
+        },
+        whatView() {
+            this.isView = !this.isView
+        }
+    },
+    mounted() {
+        this.whatView()
+    }
 });
 </script>
 
@@ -55,7 +67,7 @@ export default defineComponent({
                         </a-select>
                         <!-- selected -->
                         <div class="tab">
-                            <Tab />
+                            <Tab @view="onView" />
                         </div>
                     </div>
                 </div>
@@ -64,8 +76,8 @@ export default defineComponent({
                         Active Filters : {{ filters }}
                     </p>
                 </div>
-                <Card />
-                <category-card></category-card>
+                <Card v-if="!isView" />
+                <category-card v-else></category-card>
             </div>
         </section>
     </main>
