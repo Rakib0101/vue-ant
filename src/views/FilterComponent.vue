@@ -17,17 +17,17 @@ export default defineComponent({
     data() {
         const options1 = ref < SelectProps['options'] > ([
             {
-                value: 'jack',
-                label: 'Jack',
+                value: 'ascending',
+                label: 'Ascending',
             },
             {
-                value: 'lucy',
-                label: 'Lucy',
+                value: 'descending',
+                label: 'Descending',
             }])
         return {
             count: 5,
             filters: [],
-            value1: ref('Default'),
+            value1: ref('Sort By :'),
             options1,
         };
     },
@@ -41,7 +41,7 @@ export default defineComponent({
             <div class="flex-grow-0 max-w-[984px] space-y-6">
                 <div class="flex items-center justify-between">
                     <a-button
-                        class="flex items-center gap-2 filter-button px-5 h-[48px] border-[#32b32b] border-2 rounded-[6px] hover:bg-[#32b32b] hover:text-white">
+                        class="flex items-center gap-2 filter-button px-5 h-[48px] rounded-[6px] hover:bg-[#32b32b] hover:text-white hover:border-transparent">
                         <Filter /> filter
                         <div v-show="count > 0" class="text-white bg-[#32b32b] p-1 rounded-full w-5 h-5 notification">
                             {{ count }}
@@ -49,12 +49,10 @@ export default defineComponent({
                     </a-button>
                     <div class="flex items-center justify-between gap-3">
                         <!-- Selected -->
-                        <a-space class="border border-[#ff0000] rounded">
-                            <a-select ref="select" v-model:value="value1">
-                                <a-select-option value="des">Descending</a-select-option>
-                                <a-select-option value="asc">Ascending</a-select-option>
-                            </a-select>
-                        </a-space>
+                        <a-select ref="select" v-model:value="value1" class="rounded-md">
+                            <a-select-option value="des">Descending</a-select-option>
+                            <a-select-option value="asc">Ascending</a-select-option>
+                        </a-select>
                         <!-- selected -->
                         <div class="tab">
                             <Tab />
@@ -73,6 +71,10 @@ export default defineComponent({
     </main>
 </template>
 <style>
+.ant-btn.filter-button {
+    border: 2px solid #58B32B !important;
+}
+
 .filter-button {
     font-family: "IBM Plex Sans" !important;
     font-style: normal !important;
@@ -84,18 +86,20 @@ export default defineComponent({
     color: #58b32b !important;
 }
 
+.ant-btn,
+.filter-button {
+    border: 2px solid #58B32B;
+}
+
 .ant-btn:hover .notification {
     background-color: #fff !important;
     color: #58b32b !important;
 }
 
-.ant-select:hover {
-    border: 1px solid red !important;
-    border-radius: 0px !important;
-}
+
 
 .ant-select-selector {
-    padding: 12px 16px !important;
+    padding: 12px 18px !important;
     width: 200px !important;
     height: 48px !important;
     display: flex;
@@ -106,7 +110,20 @@ export default defineComponent({
     font-size: 16px;
     line-height: 24px;
     color: #636a60;
+    border: 1px solid transparent !important;
+    border-radius: 6px !important;
+}
 
+.ant-select,
+.ant-select:hover {
+    border: 1px solid #636a60 !important;
+    border-radius: 6px !important;
+}
+
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector:hover {
+    border: 1px solid #636a60 !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
 }
 
 
