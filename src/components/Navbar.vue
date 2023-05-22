@@ -1,6 +1,6 @@
 <template>
-  <div class="w-[1920px]">
-    <div class="w-[1320px] flex justify-between mx-auto h-fit">
+  <div class="bg-[#F3F5F2]">
+    <div class="max-w-[1320px] flex justify-between mx-auto">
       <div class="flex justify-center items-center my-[24px]">
         <span class="mr-[11.67px]">
           <svg

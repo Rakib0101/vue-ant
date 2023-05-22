@@ -1,6 +1,4 @@
 <script setup>
-import Navbar from "./components/Navbar.vue";
-import CategoryCard from "./components/CategoryCard.vue";
 import { RouterLink, RouterView } from "vue-router";
 </script>
 
@@ -9,3 +7,5 @@ import { RouterLink, RouterView } from "vue-router";
   <Navbar></Navbar>
   <CategoryCard></CategoryCard>
 </template>
+
+<style scoped></style>
