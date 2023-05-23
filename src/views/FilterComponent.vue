@@ -49,12 +49,12 @@ export default defineComponent({
 <template>
     <main class="max-w-[1320px] mx-auto pt-6">
         <section class="flex gap-6">
-            <div class="w-[319px] flex-grow-0 h-fit space-y-6">
+            <div class="w-[319px] flex-grow-0 h-fit space-y-6 hidden xl:block">
                 <img src="../assets/images/side-ad.png" class="w-full object-cover" alt="">
                 <img src="https://smartblogger.com/wp-content/uploads/2222/12/banner-ads-planet-fitness.jpg"
                     class="w-full object-cover" alt="">
             </div>
-            <div class="flex-grow-0 max-w-[984px] space-y-6 ">
+            <div class="flex-grow-0 max-w-[984px] space-y-6 px-6 lg:px-0">
                 <div class="flex items-center justify-between">
                     <a-button
                         class="flex items-center gap-2 filter-button px-5 h-[48px] rounded-[6px] hover:bg-[#32b32b] hover:text-white hover:border-transparent">
@@ -81,7 +81,9 @@ export default defineComponent({
                         }}</span>
                     </p>
                 </div>
-                <Card v-if="!isView" />
+                <div v-if="!isView" class="grid md:grid-cols-2 xl:grid-cols-1 gap-3">
+                    <Card />
+                </div>
                 <category-card v-else></category-card>
             </div>
         </section>

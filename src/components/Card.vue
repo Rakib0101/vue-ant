@@ -1,7 +1,7 @@
 <template>
-    <a-card v-for="(card, i) in  cards " hoverable style="width: 984px" class="!border-[#DEE5DC] !border !rounded-[9px]"
-        :key="i">
-        <div class="grid grid-cols-3">
+    <a-card v-for="(card, i) in  cards " hoverable style="width: fit-content"
+        class="!border-[#DEE5DC] !border !rounded-[9px]" :key="i">
+        <div class="grid grid-cols-1 xl:grid-cols-3">
             <!-- 1st column -->
             <div class="border-4 rounded border-blue-500">
                 <div class="relative overflow-hidden">
@@ -12,6 +12,10 @@
                         <span v-show="card.isUrgent"
                             class="urgent bg-[#CC3E42] py-1 px-[10px] border border-white rounded">urgent</span>
                     </div>
+                    <a-button @click="fav(i)" :class="{ 'bg-[#58b32b] loved': card.isLoved }"
+                        class="md:hidden flex absolute top-[5px] right-[5px] border-2 border-[#58B32B] w-fit h-fit rounded-full p-2 justify-center items-center">
+                        <heart />
+                    </a-button>
                     <span v-show="card.isTop"
                         class="top-flag absolute bottom-[5px] -left-[30px] bg-[#1F85E2] pt-1 pb-[6px] px-8 rotate-45">top</span>
                 </div>
@@ -38,20 +42,21 @@
                 </div>
             </div>
             <!-- 3rd column -->
-            <div class="p-6 flex justify-between flex-col">
-                <div class="flex justify-between">
+            <div class="p-6 flex flex-row items-center xl:items-stretch xl:justify-between xl:flex-col justify-between">
+                <div class="flex justify-between md:w-1/2 xl:w-full">
                     <div class="space-y-1">
                         <p class="price">${{ card.price }}</p>
                         <p class="currency">{{ card.currency }}</p>
                     </div>
                     <div>
                         <a-button @click="fav(i)" :class="{ 'bg-[#58b32b] loved': card.isLoved }"
-                            class="border-2 border-[#58B32B] w-fit h-fit rounded-full p-3 flex justify-center items-center">
+                            class="hidden md:flex border-2 border-[#58B32B] w-fit h-fit rounded-full p-3 justify-center items-center">
                             <heart />
                         </a-button>
                     </div>
                 </div>
-                <a-button style="width: 100%; height: auto; padding: 0; border-radius: 6px; border: none;">
+                <a-button style="height: auto; padding: 0; border-radius: 6px; border: none;"
+                    class="w-1/2 md:w-1/3 xl:w-full">
                     <div
                         class="cardBtn border border-[#58b32b] hover:border-transparent  hover:text-white rounded-[6px] hover:bg-[#58b32b] transition-colors duration-200">
                         view details
