@@ -26,21 +26,35 @@ export default {
                 {
                     link: "/", item: "2nd item"
                 },
-            ]
+            ],
+            isShowed: false
         }
+    },
+    methods: {
+        showMenu() {
+            this.isShowed = !this.isShowed;
+        }
+    },
+    mounted() {
+        this.showMenu()
     }
 }
 </script>
 
 <template>
     <div class="bg-white py-6">
-        <div class="flex justify-between max-w-[1320px] mx-auto">
-            <div class="flex gap-5">
+        <div class="flex justify-between max-w-[1320px] container px-2 lg:px-6 2xl:px-0">
+            <div class="flex gap-2 lg:gap-5">
                 <!-- Category Button -->
-                <div class="w-[148px]">
+                <div class="lg:w-[148px] my-auto">
+                    <a-button @click="showMenu"
+                        class="flex lg:hidden menuBtn border border-[#58B32B] items-center gap-[11px] hover:border-primary hover:text-primary rounded-md justify-center transition duration-300 h-[48px]">
+                        <ListIcon />
+                        Menu
+                    </a-button>
                     <a-dropdown>
                         <a @click.prevent
-                            class="ant-dropdown-link flex items-center gap-[11px] border hover:border-primary hover:text-primary rounded-md justify-center categoryBtn transition duration-300">
+                            class="ant-dropdown-link items-center gap-[11px] border hover:border-primary hover:text-primary rounded-md justify-center categoryBtn transition duration-300 hidden lg:flex">
                             <ListIcon />
                             Category
                         </a>
@@ -54,27 +68,30 @@ export default {
                     </a-dropdown>
                 </div>
                 <!-- Category-Button End -->
-                <nav class="flex items-center gap-5">
-                    <a href="">Home</a>
-                    <a href="">Browse Listing</a>
-                    <a href="">Pricing Plan</a>
-                    <a-dropdown>
-                        <a href="" class="ant-dropdown-link flex items-center gap-[5px]">
-                            Testing Dropdown
-                            <DownIcon />
-                        </a>
-                        <template #overlay>
-                            <a-menu>
-                                <a-menu-item v-for="menu in menus" :key="menu.item">
-                                    <a :href="menu.link">{{ menu.item }}</a>
-                                </a-menu-item>
-                            </a-menu>
-                        </template>
-                    </a-dropdown>
-                    <a href="">Blog</a>
+                <nav class="flex items-center lg:justify-between">
+                    <div :class="{ notShowed: !isShowed }"
+                        class="flex flex-col fixed top-[100px] opacity-100 left-0 translate-x-0 py-14 rounded-tr-md rounded-br-md bg-[#F1F5F0] z-[999] px-10 gap-10 lg:static lg:flex-row items-center lg:gap-5 lg:py-0 lg:px-0 lg:bg-inherit transition-all duration-500">
+                        <a href="">Home</a>
+                        <a href="">Browse Listing</a>
+                        <a href="">Pricing Plan</a>
+                        <a-dropdown>
+                            <a href="" class="ant-dropdown-link flex items-center gap-[5px]">
+                                Testing Dropdown
+                                <DownIcon />
+                            </a>
+                            <template #overlay>
+                                <a-menu>
+                                    <a-menu-item v-for="menu in menus" :key="menu.item">
+                                        <a :href="menu.link">{{ menu.item }}</a>
+                                    </a-menu-item>
+                                </a-menu>
+                            </template>
+                        </a-dropdown>
+                        <a href="">Blog</a>
+                    </div>
                 </nav>
             </div>
-            <a-button class="llBtn !py-[11px] !px-[17px] !h-auto">
+            <a-button class="llBtn py-[11px] px-[17px] h-auto hidden lg:flex">
                 EN,USD
             </a-button>
         </div>
@@ -120,8 +137,28 @@ nav a:hover {
     border: 1px solid #DEE6DC !important;
 }
 
-.ant-btn.llBtn:hover {
+.ant-btn.llBtn:hover,
+.ant-btn.llBtn:focus {
     border-color: #58B32B;
     color: #58B32B;
+}
+
+.ant-btn.menuBtn {
+    border: 1px solid #58B32B !important;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #636A60;
+    border-radius: 6px;
+    box-shadow: 0px 3px 14px rgba(23, 30, 21, 0.02);
+    border: 1px solid #DEE6DC !important;
+}
+
+.notShowed {
+    transform: translateX(-50%) !important;
+    opacity: 0 !important;
+    transition: all .3s ease-in !important;
 }
 </style>

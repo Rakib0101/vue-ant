@@ -10,7 +10,12 @@ module.exports = {
       },
       colors:{
         primary: "#58B32B"
-      }
+      },
+      container: {
+        big: '1320px',
+        large: '991px',
+        center: true,
+      },
     },
   },
   plugins: [],

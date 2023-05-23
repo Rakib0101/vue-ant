@@ -25,8 +25,8 @@ export default defineComponent({
                 label: 'Descending',
             }])
         return {
-            count: 5,
-            filters: [],
+            count: 2,
+            filters: ['Fixed Price', 'Used'],
             value1: ref('Sort By :'),
             options1,
             isView: true
@@ -49,8 +49,12 @@ export default defineComponent({
 <template>
     <main class="max-w-[1320px] mx-auto pt-6">
         <section class="flex gap-6">
-            <div class="w-[319px] flex-grow-0"></div>
-            <div class="flex-grow-0 max-w-[984px] space-y-6">
+            <div class="w-[319px] flex-grow-0 h-fit space-y-6">
+                <img src="../assets/images/side-ad.png" class="w-full object-cover" alt="">
+                <img src="https://smartblogger.com/wp-content/uploads/2222/12/banner-ads-planet-fitness.jpg"
+                    class="w-full object-cover" alt="">
+            </div>
+            <div class="flex-grow-0 max-w-[984px] space-y-6 ">
                 <div class="flex items-center justify-between">
                     <a-button
                         class="flex items-center gap-2 filter-button px-5 h-[48px] rounded-[6px] hover:bg-[#32b32b] hover:text-white hover:border-transparent">
@@ -73,7 +77,8 @@ export default defineComponent({
                 </div>
                 <div class="bg-[#F3F5F2] rounded-md">
                     <p v-show="filters.length" class="activeFilters py-[14px] px-[18px]">
-                        Active Filters : {{ filters }}
+                        Active Filters : <span>{{ filters.join(', ')
+                        }}</span>
                     </p>
                 </div>
                 <Card v-if="!isView" />
