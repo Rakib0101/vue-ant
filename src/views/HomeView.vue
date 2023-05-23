@@ -7,13 +7,13 @@ import Filter from "./FilterComponent.vue";
 
 <template>
   <main>
-    <!-- <Navbar /> -->
+    <Navbar />
     <MidNav />
-    <!-- <BreadCrumb />
+    <BreadCrumb />
     <div class="max-w-[1320px] mx-auto">
       <div class="flex justify-end py-6">
         <Filter />
       </div>
-    </div> -->
+    </div>
   </main>
 </template>
