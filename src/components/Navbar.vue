@@ -1,6 +1,6 @@
 <template>
   <div class="bg-[#F3F5F2]">
-    <div class="max-w-[1320px] flex justify-between mx-auto">
+    <div class="max-w-[1320px] items-center flex justify-between mx-auto">
       <div class="flex justify-center items-center my-[24px]">
         <span class="mr-[11.67px]">
           <svg
@@ -125,12 +125,12 @@
           </div>
         </label>
       </div>
-      <div class="flex justify-center items-center gap-[12px]">
+      <div class="flex items-center justify-center gap-[12px]">
         <!-- <a-button class="nav-btn-left !font-semibold">Sign In</a-button> -->
-        <a-button class="!p-0 !h-fit !w-fit">
-          <div class="nav-btn-left">Sign In</div>
+        <a-button class="!p-0 h-fit !w-fit">
+          <div class="nav-btn-left h-[48px]">Sign In</div>
         </a-button>
-        <a-button class="!p-0 !h-fit !w-fit">
+        <a-button class="!p-0 h-fit !w-fit">
           <div class="nav-btn-right flex items-center justify-center">
             <span class="!pr-[10px]"><PlusIcon></PlusIcon></span>
             Post Your Ad
