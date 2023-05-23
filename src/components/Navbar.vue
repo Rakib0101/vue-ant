@@ -24,8 +24,8 @@
           </svg>
         </span>
         <p class="mr-[16px] navbar-name my-auto hidden lg:flex">Adriver</p>
-        <!-- search icon -->
-        <span v-on:click="show" class="lg:hidden">
+        <!-- search start -->
+        <span v-on:click="show" class="lg:hidden font-bold">
           <svg
             width="24"
             height="24"
@@ -35,15 +35,18 @@
           >
             <path
               d="M21 21L17.5001 17.5M20 11.5C20 16.1944 16.1944 20 11.5 20C6.80558 20 3 16.1944 3 11.5C3 6.80558 6.80558 3 11.5 3C16.1944 3 20 6.80558 20 11.5Z"
-              stroke="#171E15"
+              stroke="#58b32b"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
             />
           </svg>
         </span>
-        <!-- level -->
-        <level class="lg:flex hidden top-navbar-label">
+        <!-- search end -->
+        <!-- {{ isTrue }} -->
+        <!-- label start -->
+        <label v-show="isTrue" class="lg:flex hidden top-navbar-label">
+          <!-- :class="['flex', 'top-navbar-label', isTrue ? 'flex-col' : 'hidden']" -->
           <div class="flex items-center justify-center !pl-[18px]">
             <div class="flex justify-between">
               <div class="flex items-center justify-center">
@@ -129,13 +132,13 @@
               class="search-field"
             />
           </div>
-        </level>
+        </label>
+        <!-- label end -->
       </div>
-
       <div class="flex items-center justify-center gap-[12px]">
         <a-button class="!p-0 h-fit">
           <div
-            class="h-[48px] not-italic font-semibold text-[15px] uppercase py-0 px-[20px] leading-[48px] font-['IBM_Plex_Sans'] tracking-[-0.01em] rounded-lg text-[#58b32b] border-2 border-[#58b32b]"
+            class="h-[48px] not-italic font-semibold text-[15px] uppercase py-0 px-[20px] leading-[48px] font-['IBM_Plex_Sans'] tracking-[-0.01em] rounded-lg text-[#58b32b] border-2 border-[#58b32b] hover:border-[#356b1a]"
           >
             Sign In
           </div>
@@ -168,6 +171,9 @@ export default {
     show() {
       this.isTrue = !this.isTrue;
     },
+  },
+  mounted() {
+    this.show();
   },
 };
 </script>
@@ -208,9 +214,6 @@ export default {
   border-radius: 6px;
   color: #58b32b;
   border: 2px solid #58b32b;
-}
-.nav-btn-left:hover {
-  border: 2px solid #356b1a;
 }
 
 .nav-btn-right {
