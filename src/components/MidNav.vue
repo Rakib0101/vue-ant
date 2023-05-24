@@ -78,7 +78,7 @@ export default defineComponent({
                 <!-- Category-Button End -->
                 <nav class="flex items-center lg:justify-between">
                     <!-- Desktop Nav -->
-                    <div class="hidden lg:static lg:flex items-center lg:gap-5 lg:py-0 lg:px-0 lg:bg-inherit ">
+                    <div class="hidden md:flex items-center md:gap-5 lg:py-0 lg:px-0 lg:bg-inherit ">
                         <a href="">Home</a>
                         <a href="">Browse Listing</a>
                         <a href="">Pricing Plan</a>
@@ -125,7 +125,7 @@ export default defineComponent({
 
                 </nav>
             </div>
-            <a-button class="llBtn py-[11px] px-[17px] h-auto hidden lg:flex">
+            <a-button class="llBtn py-[11px] px-[17px] h-auto hidden md:flex">
                 EN,USD
             </a-button>
         </div>
