@@ -3,7 +3,7 @@
         class="!border-[#DEE5DC] !border !rounded-[9px]" :key="i">
         <div class="grid grid-cols-1 xl:grid-cols-3">
             <!-- 1st column -->
-            <div class="border-4 rounded border-blue-500">
+            <a href="/" class="border-4 rounded border-blue-500">
                 <div class="relative overflow-hidden">
                     <img :alt="card.productAlt" :src="card.productImage" class="w-full" />
                     <div class="absolute top-[12px] left-[12px] space-x-[6px]">
@@ -19,7 +19,7 @@
                     <span v-show="card.isTop"
                         class="top-flag absolute bottom-[5px] -left-[30px] bg-[#1F85E2] pt-1 pb-[6px] px-8 rotate-45">top</span>
                 </div>
-            </div>
+            </a>
             <!-- 2nd column -->
             <div class="p-4 sm:p-6 flex flex-col justify-between border-r border-[#DEE5DC]">
                 <!-- upper section -->
@@ -29,7 +29,7 @@
                         for sale
                     </div>
                     <div class="">
-                        <p class="product-heading">{{ card.productHeading }}</p>
+                        <a href="/" class="product-heading hover:text-[#58B32B]">{{ card.productHeading }}</a>
                         <p class="location-text">{{ card.location }} </p>
                     </div>
                 </div>
@@ -57,13 +57,13 @@
                         </a-button>
                     </div>
                 </div>
-                <a-button style="height: auto; padding: 0; border-radius: 6px; border: none;"
+                <a href="/" style="height: auto; padding: 0; border-radius: 6px; border: none; text-align: center"
                     class="w-1/2 md:w-1/3 xl:w-full">
                     <div
                         class="cardBtn border border-[#58b32b] hover:border-transparent  hover:text-white rounded-[6px] hover:bg-[#58b32b] transition-colors duration-200">
                         view details
                     </div>
-                </a-button>
+                </a>
             </div>
         </div>
     </a-card>

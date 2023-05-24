@@ -27,7 +27,7 @@ export default defineComponent({
         return {
             count: 2,
             filters: ['Fixed Price', 'Used'],
-            value1: ref('Sort By :'),
+            value1: ref('Default'),
             options1,
             isView: true
         };
@@ -63,12 +63,15 @@ export default defineComponent({
                             {{ count }}
                         </div>
                     </a-button>
-                    <div class="flex items-center justify-between gap-2 md:gap-3">
+                    <div class="flex items-center justify-between gap-2 md:gap-3 sort">
                         <!-- Selected -->
-                        <a-select ref="select" v-model:value="value1" class="rounded-md w-[128px]  md:w-[200px]">
-                            <a-select-option value="des">Descending</a-select-option>
-                            <a-select-option value="asc">Ascending</a-select-option>
-                        </a-select>
+                        <div class="flex items-center md:px-3 border-2 border-[#68B32B] rounded-md">
+                            Sort by : <a-select ref="select" v-model:value="value1"
+                                class="rounded-md w-[128px]  md:w-[140px] h-[48px] sortBy flex items-center sort">
+                                <a-select-option value="des">Descending</a-select-option>
+                                <a-select-option value="asc">Ascending</a-select-option>
+                            </a-select>
+                        </div>
                         <!-- selected -->
                         <div class="tab hidden sm:block">
                             <Tab @view="onView" />
@@ -117,28 +120,25 @@ export default defineComponent({
 
 
 
-.ant-select-selector {
+.sort {
     height: 48px !important;
-    display: flex;
-    align-items: center;
-    font-family: "IBM Plex Sans";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #636a60;
-    border: 1px solid transparent !important;
-    border-radius: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+    font-family: "IBM Plex Sans" !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #636a60 !important;
 }
 
-.ant-select,
-.ant-select:hover {
-    border: 1px solid #636a60 !important;
-    border-radius: 6px !important;
+
+.ant-select:not(.ant-select-customize-input).sortBy .ant-select-selector {
+    border: none !important;
 }
 
-.ant-select:not(.ant-select-disabled):hover .ant-select-selector:hover {
-    border: 1px solid #636a60 !important;
+.ant-select:not(.ant-select-disabled):hover.sortBy .ant-select-selector:hover {
+    border: none !important;
     border-radius: 6px !important;
     box-shadow: none !important;
 }
