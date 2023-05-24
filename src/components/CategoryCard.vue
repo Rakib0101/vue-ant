@@ -1,7 +1,12 @@
 <template>
   <div class="">
-    <div class="grid grid-cols-3 gap-[24px] mx-auto my-auto">
-      <a-card v-for="card in cards" :key="card.id" hoverable class="!border-[#DEE5DC] !border !rounded-[9px]">
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-[24px] mx-auto my-auto">
+      <a-card
+        v-for="card in cards"
+        :key="card.id"
+        hoverable
+        class="!border-[#DEE5DC] !border !rounded-[9px]"
+      >
         <div class="card">
           <div class="">
             <div class="relative overflow-hidden">
@@ -9,12 +14,16 @@
               <span class="absolute right-6 top-6">
                 <LoveIcon></LoveIcon>
               </span>
-              <button v-show="card.isFeat"
-                class="absolute left-6 top-6 py-[4px] px-[10px] bg-[#E8903B] border border-[#FFFFFF] rounded text-[#FFFFFF] font-semibold text-sm leading-5">
+              <button
+                v-show="card.isFeat"
+                class="absolute left-6 top-6 py-[4px] px-[10px] bg-[#E8903B] border border-[#FFFFFF] rounded text-[#FFFFFF] font-semibold text-sm leading-5"
+              >
                 Featured
               </button>
-              <button v-show="card.isUrgent"
-                class="absolute left-28 top-6 py-[4px] px-[10px] bg-[#CC3E42] border border-[#FFFFFF] rounded text-[#FFFFFF] font-semibold text-sm leading-5">
+              <button
+                v-show="card.isUrgent"
+                class="absolute left-28 top-6 py-[4px] px-[10px] bg-[#CC3E42] border border-[#FFFFFF] rounded text-[#FFFFFF] font-semibold text-sm leading-5"
+              >
                 Urgents
               </button>
               <span class="absolute top-[222px]">
@@ -25,17 +34,22 @@
               <span class="mr-[4px]">
                 <ForSaleIcon></ForSaleIcon>
               </span>
-              <p class="text-[#58B32B] mb-[0px] font-semibold text-sm uppercase for-sale">
+              <p
+                class="text-[#58B32B] mb-[0px] font-semibold text-sm uppercase for-sale"
+              >
                 For sale
               </p>
             </div>
 
             <div>
-              <p class="pt-[7px] px-[16px] mb-0 font-semibold not-italic text-[16px] leading-6 category-description">
+              <p
+                class="pt-[7px] px-[16px] mb-0 font-semibold not-italic text-[16px] leading-6 category-description"
+              >
                 {{ card.description }}
               </p>
               <p
-                class="px-[16px] pt-[6px] pb-[16px] mb-0 category-location not-italic text-[14px] leading-5 font-normal self-stretch">
+                class="px-[16px] pt-[6px] pb-[16px] mb-0 category-location not-italic text-[14px] leading-5 font-normal self-stretch"
+              >
                 {{ card.location }}
               </p>
               <hr class="mb-[16px]" />
@@ -43,7 +57,9 @@
                 <span class="mr-[6px]">
                   <Negotaiable></Negotaiable>
                 </span>
-                <p class="not-italic font-normal text-sm leading-5 text-[#3A4138]">
+                <p
+                  class="not-italic font-normal text-sm leading-5 text-[#3A4138]"
+                >
                   Negotaiable:
                   {{ card.isNegotiable ? "fixed" : "Negotiable" }}
                 </p>
@@ -60,10 +76,15 @@
 
               <div class="flex justify-between px-[16px] py-[16px]">
                 <div>
-                  <p class="font-semibold !mb-0 leading-6 text-[20px] uppercase text-[#E8903B]">
+                  <p
+                    class="font-semibold !mb-0 leading-6 text-[20px] uppercase text-[#E8903B]"
+                  >
                     {{ card.price }}
                   </p>
-                  <span class="not-italic text-[14px] leading-5 font-normal text-[#636A60] self-stretch">USD</span>
+                  <span
+                    class="not-italic text-[14px] leading-5 font-normal text-[#636A60] self-stretch"
+                    >USD</span
+                  >
                 </div>
                 <div class="flex gap-[8px]">
                   <ContactIcon></ContactIcon>
