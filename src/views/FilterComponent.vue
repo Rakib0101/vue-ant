@@ -81,7 +81,7 @@ export default defineComponent({
                         }}</span>
                     </p>
                 </div>
-                <div v-if="!isView" class="grid md:grid-cols-2 xl:grid-cols-1 gap-3">
+                <div v-if="!isView" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-3">
                     <Card />
                 </div>
                 <category-card v-else></category-card>

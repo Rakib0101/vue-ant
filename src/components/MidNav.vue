@@ -1,11 +1,15 @@
 <script>
 import ListIcon from "./icons/list.vue";
 import DownIcon from "./icons/DownIcon.vue";
-export default {
+
+import { CloseOutlined } from "@ant-design/icons-vue"
+import { defineComponent } from "vue";
+export default defineComponent({
     name: "MidNav",
     components: {
         ListIcon,
         DownIcon,
+        CloseOutlined
     },
     data() {
 
@@ -42,7 +46,7 @@ export default {
             this.isShowed = !this.isShowed;
         },
     },
-};
+});
 </script>
 
 <template>
@@ -73,8 +77,8 @@ export default {
                 </div>
                 <!-- Category-Button End -->
                 <nav class="flex items-center lg:justify-between">
-                    <div :class="isShowed ? 'top-[100px] opacity-100 left-0 translate-x-0' : 'top-[100px] opacity-0 -translate-x-[300px]'"
-                        class="flex flex-col fixed py-14 rounded-tr-md rounded-br-md bg-[#F1F5F0] z-[999] px-10 gap-10 lg:static lg:flex-row items-center lg:gap-5 lg:py-0 lg:px-0 lg:bg-inherit transition-all duration-500">
+                    <!-- Desktop Nav -->
+                    <div class="hidden lg:static lg:flex items-center lg:gap-5 lg:py-0 lg:px-0 lg:bg-inherit ">
                         <a href="">Home</a>
                         <a href="">Browse Listing</a>
                         <a href="">Pricing Plan</a>
@@ -93,6 +97,32 @@ export default {
                         </a-dropdown>
                         <a href="">Blog</a>
                     </div>
+                    <!-- Mobile Nav -->
+                    <div :class="isShowed ? 'top-[50px] opacity-100 translate-x-[-280px]' : 'top-[100px] opacity-1 translate-x-[-3000px]'"
+                        class="fixed rounded-tr-md rounded-br-md z-[999] lg:hidden transition-all duration-500 px-40">
+                        <a-button @click="isShowed = !isShowed" type="button"
+                            class="relative text-lg font-bold text-[#58B32B] top-10 left-80 bg-transparent z-[9999] flex justify-center items-center"><close-outlined /></a-button>
+                        <div class="flex flex-col fixed py-14 bg-[#F1F5F0] items-center z-[999] gap-10 w-full">
+                            <a href="">Home</a>
+                            <a href="">Browse Listing</a>
+                            <a href="">Pricing Plan</a>
+                            <a-dropdown>
+                                <a href="" class=" ant-dropdown-link flex items-center gap-[5px]">
+                                    Testing Dropdown
+                                    <DownIcon />
+                                </a>
+                                <template #overlay>
+                                    <a-menu>
+                                        <a-menu-item v-for="menu in menus" :key="menu.item">
+                                            <a :href="menu.link">{{ menu.item }}</a>
+                                        </a-menu-item>
+                                    </a-menu>
+                                </template>
+                            </a-dropdown>
+                            <a href="">Blog</a>
+                        </div>
+                    </div>
+
                 </nav>
             </div>
             <a-button class="llBtn py-[11px] px-[17px] h-auto hidden lg:flex">
