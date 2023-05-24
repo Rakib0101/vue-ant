@@ -54,23 +54,23 @@ export default defineComponent({
                 <img src="https://smartblogger.com/wp-content/uploads/2222/12/banner-ads-planet-fitness.jpg"
                     class="w-full object-cover" alt="">
             </div>
-            <div class="flex-grow-0 max-w-[984px] space-y-6 px-6 lg:px-0">
+            <div class="flex-grow-0 max-w-[984px] space-y-6 px-2 sm:px-6 lg:px-0">
                 <div class="flex items-center justify-between">
                     <a-button
-                        class="flex items-center gap-2 filter-button px-5 h-[48px] rounded-[6px] hover:bg-[#32b32b] hover:text-white hover:border-transparent">
+                        class="flex items-center gap-2 filter-button px-3 sm:px-5 h-[48px] rounded-[6px] hover:bg-[#32b32b] hover:text-white hover:border-transparent">
                         <Filter /> filter
                         <div v-show="count > 0" class="text-white bg-[#32b32b] p-1 rounded-full w-5 h-5 notification">
                             {{ count }}
                         </div>
                     </a-button>
-                    <div class="flex items-center justify-between gap-3">
+                    <div class="flex items-center justify-between gap-2 md:gap-3">
                         <!-- Selected -->
-                        <a-select ref="select" v-model:value="value1" class="rounded-md">
+                        <a-select ref="select" v-model:value="value1" class="rounded-md w-[128px]  md:w-[200px]">
                             <a-select-option value="des">Descending</a-select-option>
                             <a-select-option value="asc">Ascending</a-select-option>
                         </a-select>
                         <!-- selected -->
-                        <div class="tab">
+                        <div class="tab hidden sm:block">
                             <Tab @view="onView" />
                         </div>
                     </div>
@@ -118,8 +118,6 @@ export default defineComponent({
 
 
 .ant-select-selector {
-    padding: 12px 18px !important;
-    width: 200px !important;
     height: 48px !important;
     display: flex;
     align-items: center;

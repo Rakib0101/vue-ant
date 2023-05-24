@@ -54,15 +54,15 @@ export default defineComponent({
         <div class="flex justify-between max-w-[1320px] container px-2 lg:px-6 2xl:px-0">
             <div class="flex gap-2 lg:gap-5">
                 <!-- Category Button -->
-                <div class="lg:w-[148px] my-auto" @click="isShowed = !isShowed">
+                <div class="md:w-[148px] my-auto" @click="isShowed = !isShowed">
                     <a-button
-                        class="flex lg:hidden menuBtn border border-[#58B32B] items-center gap-[11px] hover:border-primary hover:text-primary rounded-md justify-center transition duration-300 h-[48px]">
+                        class="flex md:hidden menuBtn border border-[#58B32B] items-center gap-[11px] hover:border-primary hover:text-primary rounded-md justify-center transition duration-300 h-[48px]">
                         <ListIcon />
                         Menu
                     </a-button>
                     <a-dropdown>
                         <span
-                            class="ant-dropdown-link items-center gap-[11px] border hover:border-primary hover:text-primary rounded-md justify-center categoryBtn transition duration-300 hidden lg:flex">
+                            class="ant-dropdown-link items-center gap-[11px] border hover:border-primary hover:text-primary rounded-md justify-center categoryBtn transition duration-300 hidden md:flex">
                             <ListIcon />
                             Category
                         </span>
