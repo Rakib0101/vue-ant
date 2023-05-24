@@ -125,7 +125,7 @@ export default defineComponent({
 
                 </nav>
             </div>
-            <a-button class="llBtn py-[11px] px-[17px] h-auto hidden md:flex">
+            <a-button class="llBtn py-[11px] px-[17px] h-auto flex">
                 EN,USD
             </a-button>
         </div>

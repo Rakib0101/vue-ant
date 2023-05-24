@@ -21,15 +21,17 @@
                 </div>
             </div>
             <!-- 2nd column -->
-            <div class="p-6 flex flex-col justify-between border-r border-[#DEE5DC]">
+            <div class="p-4 sm:p-6 flex flex-col justify-between border-r border-[#DEE5DC]">
                 <!-- upper section -->
-                <div class="space-y-[6px]">
+                <div class="space-y-5 sm:space-y-[6px] ">
                     <div class="icon-button pricing-conditions">
                         <PriceTag />
                         for sale
                     </div>
-                    <p class="product-heading">{{ card.productHeading }}</p>
-                    <p class="location-text">{{ card.location }} </p>
+                    <div class="">
+                        <p class="product-heading">{{ card.productHeading }}</p>
+                        <p class="location-text">{{ card.location }} </p>
+                    </div>
                 </div>
                 <!-- lower section -->
                 <div class="space-y-[8px]">
