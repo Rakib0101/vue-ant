@@ -26,7 +26,7 @@
               >
                 Urgents
               </button>
-              <span class="absolute top-[222px]">
+              <span class="absolute top-[148px] xl:flex hidden">
                 <TopIcon></TopIcon>
               </span>
             </div>
