@@ -12,9 +12,11 @@ module.exports = {
         primary: "#58B32B"
       },
       container: {
-        big: '1320px',
-        large: '991px',
         center: true,
+        screens:{
+          xl: '1320px',
+          large: '991px',
+        }
       },
     },
   },
